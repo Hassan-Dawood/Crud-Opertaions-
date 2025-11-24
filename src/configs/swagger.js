@@ -1,4 +1,5 @@
 const swaggerJsdoc = require("swagger-jsdoc");
+const path = require("path");
 
 const options = {
   definition: {
@@ -10,11 +11,11 @@ const options = {
     },
     servers: [
       {
-        url: "https://crud-opertaions.onrender.com/",
+        url: "https://crud-opertaions.onrender.com",
       },
     ],
   },
-  apis: ["./src/routes/*.js"], 
+ apis: [path.join(__dirname, "../routes/*.js")], // ← absolute path
 };
 
 const swaggerSpec = swaggerJsdoc(options);
